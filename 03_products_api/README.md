@@ -127,6 +127,57 @@ The **errors**, **warnings** and **infos** for your submitted *variant*:
 
 In case of errors or warnings, you can resubmit your data after correcting the errors and warnings.
 
+#### Material composition
+
+The material composition ("Materialzusammensetzung") is a special attribute that can be submitted for some product categories.
+A valid specification must match a specific string format.
+
+Placeholders in syntax description:
+
+- `${materialcomponentName}`: a valid material component name, valid values can be found [here](materials/materialcomponent_names.txt)
+- `${materialName}`: a valid material name, valid values can be found [here](materials/material_names.txt)
+- `${percentageShare}`: a percentage value between 1% and 100% which sums up to 100% with all other `${percentageShare}`s of the `${materialcomponentName}`  
+
+##### Only one material
+
+```
+${materialcomponentName}: ${percentageShare}% ${materialName}
+```
+
+e.g. _Obermaterial: 100% Leder_
+
+In case of multiple materials, the materials are separated by ','.
+
+```
+${materialcomponentName}: ${percentageShare}% ${materialName}, ${percentageShare2}% ${materialName2}
+```
+
+e.g. _Obermaterial: 80% Leder, 20% Kunstleder_
+
+##### Only one material - without component name
+
+In case there is only one material component, the `${materialcomponentName}` can be left out.
+
+```
+${percentageShare}% ${materialName}
+```
+
+e.g. _100% Leder_
+
+##### Multiple materials
+
+in case of at least two material components, the material component name needs to be specified for every component individually. The components shall be separated by ';'.
+
+```
+${materialcomponentName}: ${percentageShare}% ${materialName}; ${materialcomponentName}: ${percentageShare}% ${materialName}
+```
+
+e.g. _Obermaterial: 100% Leder; Laufsohle: 100% Gummi_
+
+```
+  ${materialcomponentName}: ${percentageShare}% ${materialName}; ${materialcomponentName1}: ${percentageShare1}% ${materialName2}
+```
+
 ## Updating your data
 
 You can update your product data via the products endpoint in the same way as you submit the data on creation of your products/variants.

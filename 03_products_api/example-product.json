@@ -206,6 +206,12 @@
 						"values": [
 							"Paar"
 						]
+					},
+                    {
+						"name": "Materialzusammensetzung",
+						"values": [
+							"Obermaterial: 80% Leder, 20% Lederimitat; Laufsohle: 100% Gummi"
+						]
 					}
                 ]
             },
@@ -318,7 +324,13 @@
 						"values": [
 							"Paar"
 						]
-					}
+					},
+                    {
+                      "name": "Materialzusammensetzung",
+                      "values": [
+                        "Obermaterial: 80% Leder, 20% Lederimitat; Laufsohle: 100% Gummi"
+                      ]
+                    }
                 ]
             }
         ]
@@ -530,7 +542,13 @@
 						"values": [
 							"Paar"
 						]
-					}
+					},
+                    {
+                      "name": "Materialzusammensetzung",
+                      "values": [
+                        "100% Leder"
+                      ]
+                    }
                 ]
             }
         ]
